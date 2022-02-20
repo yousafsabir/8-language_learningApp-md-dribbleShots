@@ -2,11 +2,6 @@
   /* padding is not included in the reset */
   padding: 0;
   font-family: "Poppins", sans-serif;
-  -moz-transform: scale(100%);
-  -webkit-transform: scale(80%);
-  -o-transform: scale(100%);
-  -ms-transform: scale(100%);
-  transform: scale(100%);
 }
 
 :root {
@@ -141,6 +136,7 @@ main h2 {
   align-content: start;
   /* grid-template-areas: "exam exam homework reading"; */
 }
+/* its components */
 .exam {
   /* giving grid areas */
   /* grid-area: exam; */
@@ -180,6 +176,96 @@ main h2 {
   /* grid-area: reading; */
   background-color: var(--readingBg);
   color: var(--purple);
+  /* these colors didn't apply on regular-titles so explicitly wrote them inline */
+}
+/* => middle section */
+.middle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+/* its components */
+.group-info {
+  box-shadow: 4px 6px 20px lightgrey;
+  border-radius: var(--borderRadius);
+  height: 325px;
+  /* padding to make content inward */
+  padding: 30px;
+  /* Aligning items */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.gi-items {
+  display: flex;
+  justify-content: space-between;
+}
+.gi-main {
+  background-color: var(--orange);
+  color: #fff;
+  border-radius: var(--borderRadius);
+  height: 130px;
+  padding: 20px;
+  gap: 30px;
+  /* Alignment */
+  align-items: center;
+}
+
+.flag-progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  /* margin-left: 45px; margin isn't a good option as when the screen size reduce, font size won't become less */
+  padding: 50px 40px;
+}
+.flag-progress img {
+  width: 50px;
+  padding: 7px;
+  border-radius: 12px;
+  box-shadow: 4px 6px 28px lightgray;
+}
+/* styling progress bar */
+.flag-progress progress {
+  border: none;
+  height: 8px;
+}
+/* for firefox */
+progress::-moz-progress-bar {
+  background-color: var(--orange);
+  border-radius: 25px;
+}
+/* for chromium browsers */
+progress::-webkit-progress-bar {
+  background-color: rgba(129, 129, 129, 0.1);
+  border-radius: 25px;
+}
+progress::-webkit-progress-value {
+  background-color: var(--orange);
+  border-radius: 25px;
+}
+/* =>bottom section */
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 15px;
+}
+/* its components */
+.but {
+  width: 100%;
+  height: 100px;
+  padding: 15px;
+  border: var(--border);
+  border-radius: var(--borderRadius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.but > div {
+  display: flex;
+  flex-basis: 50%;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Styling profile and its components */
