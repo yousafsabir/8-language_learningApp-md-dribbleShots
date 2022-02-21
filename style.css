@@ -11,6 +11,7 @@
   --red: #fe7066;
   --homeworkBg: #ffede6;
   --readingBg: #f6f4ff;
+  --profileBg: #faf9fb;
   --borderRadius: 10px;
   --border: 0.5px solid lightgrey;
 }
@@ -30,15 +31,16 @@ body {
 
 /* Setting up font sizes for different catogaries */
 .sub-titles {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   font-weight: 400;
 }
 .regular-titles {
   color: #222;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 .large-titles {
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: 500;
 }
 
@@ -248,6 +250,7 @@ progress::-webkit-progress-value {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 15px;
+  align-items: center;
 }
 /* its components */
 .but {
@@ -261,14 +264,88 @@ progress::-webkit-progress-value {
   justify-content: space-between;
 }
 .but > div {
+  width: auto;
+  gap: 10px;
   display: flex;
-  flex-basis: 50%;
-  gap: 5px;
   align-items: center;
   justify-content: space-between;
+}
+/* styling bottom icons */
+.icon-circle {
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  /* their individual colors are inlined */
 }
 
 /* Styling profile and its components */
 .profile {
   grid-area: profile;
+  background-color: var(--profileBg);
+  padding: 0px 80px;
+  /* alignment */
+  display: grid;
+  grid-template-rows: 32.5% 10% 57.5%;
+}
+/* =>picture component */
+.picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* flexbox didn't work on the name so */
+  text-align: center;
+}
+.picture img {
+  width: 110px;
+  border-radius: 40%;
+}
+.picture * {
+  margin: 5px 0px;
+}
+/* =>ad component */
+.ad {
+  border: var(--border);
+  border-radius: var(--borderRadius);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.ad i {
+  padding: 12px;
+  border-radius: var(--borderRadius);
+  box-shadow: 1px 1px 2px lightgrey;
+  color: #ffa067;
+}
+/* =>course progress component */
+.courses-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.progress-boxes {
+  width: 100%;
+  border: var(--border);
+  border-radius: var(--borderRadius);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.progress-boxes i {
+  padding: 25px;
+  margin: 0px 20px;
+  color: #fff;
+  border-radius: var(--borderRadius);
+}
+.p-grammar {
+  background-color: var(--purple);
+}
+.p-dictionary {
+  background-color: var(--orange);
+}
+.p-readinng {
+  background-color: var(--red);
 }
